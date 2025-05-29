@@ -42,3 +42,35 @@
 以上只是无聊写了个Bot，里面代码买卖不是很完善，如果造成损失，自行承担！如果你是开发人员，可以自行完善代码自行部署！谢谢。
 祝你部署顺利！需要打包文件请告诉我。
 
+
+### 打包步骤
+
+1.把上面4个代码文件分别保存为：
+
+encrypt_wallets.py
+decrypt_wallets.py
+bot.py
+README.md
+
+2.用命令行进入该目录，运行以下命令打包zip：
+
+zip MultiUserWalletBot.zip encrypt_wallets.py decrypt_wallets.py bot.py README.md
+
+3.上传到你的云服务器，安装依赖：
+
+pip install pycryptodome flask requests
+
+
+4.设置环境变量（16位密钥）：
+
+export WALLET_SECRET_KEY=1234567890abcdef
+
+（Windows PowerShell 请用 $env:WALLET_SECRET_KEY="1234567890abcdef"）
+
+5.运行：
+
+python encrypt_wallets.py
+python bot.py
+
+
+
